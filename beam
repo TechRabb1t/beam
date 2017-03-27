@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#Author: Sebastian Bodenmueller
+
+#Variables
+domain="cortoso.net"
+keyboard="de"
+resolution="1820x980"
+
+#Functions
+destination() {
+  read -p "Hostname or IP: " destination
+  if [ -z "$destination" ]
+  then
+    echo "Please enter Hostname or IP!"
+    destination
+  fi
+}
+
+user() {
+  read -p "Enter a username: " user
+if [ -z "$user" ]
+then
+  echo "Username can't be blank!"
+  user
+fi
+}
+
+password() {
+  read -s -p "Password: " password
+if [ -z "$password" ];
+then
+  echo "Password can't be blank!
+  password"
+fi
+}
+
+rdesktop_connect() {
+  rdesktop -u $user -p $password -d $domain -k $keyboard -g $resolution $destination &
+}
+
+#do something
+destination
+user
+password
+rdesktop_connect
+exit 0
