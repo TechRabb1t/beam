@@ -40,8 +40,18 @@ rdesktop_connect() {
 }
 
 #do something
-destination
-user
-password
-rdesktop_connect
+
+if [ $# -eq 1 ]
+  then
+    destination=$1
+    user
+    password
+    rdesktop_connect
+  else
+    destination
+    user
+    password
+    rdesktop_connect
+  fi
+
 exit 0
