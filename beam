@@ -9,7 +9,7 @@ resolution="1820x980" #Change it to your preferred resolution
 
 #Functions
 destination() {
-  read -p "Hostname or IP: " destination
+  read -rp "Hostname or IP: " destination
   if [ -z "$destination" ]
   then
     echo "Please enter Hostname or IP!"
@@ -36,7 +36,7 @@ fi
 }
 
 rdesktop_connect() {
-  rdesktop -u $user -p $password -d $domain -k $keyboard -g $resolution $destination &
+  rdesktop -u "$user" -p "$password" -d $domain -k $keyboard -g $resolution "$destination" &
 }
 
 #do something
