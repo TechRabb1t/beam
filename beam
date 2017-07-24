@@ -3,9 +3,9 @@
 #Author: Sebastian Bodenmueller
 
 #Variables
-domain="cortoso.net"
-keyboard="de"
-resolution="1820x980"
+domain="cortoso.net"  #Change to your domain or comment out if not needed
+keyboard="de" #Change to your keyboard layout
+resolution="1820x980" #Change it to your preferred resolution
 
 #Functions
 destination() {
